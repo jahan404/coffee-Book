@@ -4,7 +4,7 @@ import Card from './Card';
 
 const AllCoffeeCards = () => {
 
-
+   
     const {category} = useParams()
 
     const data = useLoaderData()

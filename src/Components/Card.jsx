@@ -1,9 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { IoTrashBinSharp } from "react-icons/io5";
 
-const Card = ({oneCoffeeData}) => {
+
+const Card = ({oneCoffeeData,handleCartDeletion}) => {
   const { name, image, category, origin, type, id, rating, popularity } =
   oneCoffeeData || {}
+
+  const location = useLocation()
+  const {pathname} = location
+  
 
   return (
     <div className='flex relative'>
@@ -23,7 +29,11 @@ const Card = ({oneCoffeeData}) => {
           <p>Popular: {popularity}</p>
         </div>
       </Link>
-      
+
+      {pathname ==='/favs' && <div className='absolute -top-5 -right-5 bg-warning p-2 rounded-full hover:scale-105 cursor-pointer'>
+          <p onClick={()=>handleCartDeletion(id)}><IoTrashBinSharp size={28}/>
+          </p>
+        </div>}
     </div>
   )
 };

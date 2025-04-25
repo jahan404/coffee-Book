@@ -4,10 +4,10 @@ import image from '../assets/banner.jpg'
 import ReusableHeading from '../Components/ReusableHeading';
 import CategoryTabs from '../Components/CategoryTabs';
 const Home = () => {
-
+ 
     const coffeeCategories = useLoaderData()
     console.log(coffeeCategories)
-
+ 
     return (
         <div className='w-11/12 mx-auto my-10'>
             {/* banner image */}
@@ -17,7 +17,7 @@ const Home = () => {
            
            {/* heading */}
            <ReusableHeading title={'Browse Coffees by Category'} subtitle={'Choose your desired coffee category to browse through specific coffees that fit in your taste.'}></ReusableHeading>
-           
+            
            {/* coffee categories tab */}
            <CategoryTabs categories={coffeeCategories}></CategoryTabs>
            
